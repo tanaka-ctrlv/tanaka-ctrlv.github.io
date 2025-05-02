@@ -10,10 +10,37 @@
       margin: 0;
       font-family: sans-serif;
       line-height: 1.6;
-      padding-left: 220px; /* space for the fixed TOC */
+      padding-left: 220px; /* space for TOC */
     }
 
-    /* Fixed table of contents */
+    /* Sticky top ribbon with title + intro */
+    .top-banner {
+      position: fixed;
+      top: 0;
+      left: 220px;
+      right: 0;
+      background-color: #222;
+      color: white;
+      padding: 1rem 2rem;
+      z-index: 1000;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    }
+
+    .top-banner h1 {
+      margin: 0;
+      font-size: 1.4rem;
+    }
+
+    .top-banner p {
+      margin: 0.5rem 0 0;
+      font-size: 0.9rem;
+    }
+
+    main {
+      padding-top: 130px; /* space for fixed top banner */
+    }
+
+    /* Fixed vertical TOC */
     .toc {
       position: fixed;
       top: 0;
@@ -34,19 +61,21 @@
     .toc a {
       display: block;
       margin-bottom: 0.75rem;
-      color: #333;
-      text-decoration: none;
+      color: #0066cc;
+      text-decoration: underline;
+      font-weight: 500;
     }
 
     .toc a:hover {
-      text-decoration: underline;
+      color: #004499;
+      text-decoration: none;
     }
 
     /* Content sections */
     section {
       padding: 2rem;
       position: relative;
-      min-height: 60vh;
+      min-height: 100vh;
       border-bottom: 1px solid #ddd;
     }
 
@@ -54,28 +83,37 @@
       margin-top: 0;
     }
 
+    /* Obstructing GIFs */
     .gif {
-      position: absolute;
-      top: 60px;
-      left: 60px;
+      position: sticky;
+      top: 80px;
       width: 200px;
-      z-index: 2;
-      opacity: 0.9;
-      pointer-events: none; /* allows scrolling even when image is over text */
+      margin-bottom: 1rem;
+      z-index: 10;
+      opacity: 0.95;
+      pointer-events: none;
     }
   </style>
 </head>
 
 <body>
 
+  <!-- Table of Contents -->
   <nav class="toc">
     <h2>Table of Contents</h2>
-    <a href="#vectors">1. Getting started: drawing vectors</a>
-    <a href="#animate-shapes">2. How to animate shapes</a>
-    <a href="#pen-tool">3. Drawing & animating points</a>
+    <a href="#vectors">1. Getting started</a>
+    <a href="#animate-shapes">2. Animate the shapes</a>
+    <a href="#pen-tool">3. Pen tool & point animation</a>
     <a href="#blending-modes">4. Blending modes</a>
   </nav>
 
+  <!-- Top ribbon with title and intro -->
+  <div class="top-banner">
+    <h1>Creating Loops in After Effects</h1>
+    <p>This guide explores looping animations using shapes, the pen tool, and blending techniques in Adobe After Effects. Scroll to explore techniques — but watch out for the GIFs!</p>
+  </div>
+
+  <!-- Main content -->
   <main>
     <section id="vectors">
       <h2>1. Getting started: how to draw vectors with the shape tool</h2>
