@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Creating Loops in After Effects</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: sans-serif;
+      line-height: 1.6;
+      padding-left: 220px; /* space for the fixed TOC */
+    }
+
+    /* Fixed table of contents */
+    .toc {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 200px;
+      height: 100vh;
+      background-color: #f4f4f4;
+      padding: 1rem;
+      box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+      overflow-y: auto;
+    }
+
+    .toc h2 {
+      font-size: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .toc a {
+      display: block;
+      margin-bottom: 0.75rem;
+      color: #333;
+      text-decoration: none;
+    }
+
+    .toc a:hover {
+      text-decoration: underline;
+    }
+
+    /* Content sections */
+    section {
+      padding: 2rem;
+      position: relative;
+      min-height: 60vh;
+      border-bottom: 1px solid #ddd;
+    }
+
+    h2 {
+      margin-top: 0;
+    }
+
+    .gif {
+      position: absolute;
+      top: 60px;
+      left: 60px;
+      width: 200px;
+      z-index: 2;
+      opacity: 0.9;
+      pointer-events: none; /* allows scrolling even when image is over text */
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav class="toc">
+    <h2>Table of Contents</h2>
+    <a href="#vectors">1. Getting started: drawing vectors</a>
+    <a href="#animate-shapes">2. How to animate shapes</a>
+    <a href="#pen-tool">3. Drawing & animating points</a>
+    <a href="#blending-modes">4. Blending modes</a>
+  </nav>
+
+  <main>
+    <section id="vectors">
+      <h2>1. Getting started: how to draw vectors with the shape tool</h2>
+      <img src="images/1-tanaka-mapondera-nest-16bit.gif" alt="Vector Shape Tool" class="gif" />
+      <p>
+        Adobe After Effects offers a versatile shape tool for creating clean, scalable vector graphics. Simply choose a shape from the toolbar — rectangle, ellipse, polygon — and click-drag it onto the canvas. Each shape can be customized with stroke and fill options. This foundational step sets up your loop with flexible, crisp visuals perfect for animation.
+      </p>
+    </section>
+
+    <section id="animate-shapes">
+      <h2>2. How to animate the shapes</h2>
+      <img src="images/2-tanaka-mapondera-nest-ball-twig.gif" alt="Shape Animation" class="gif" />
+      <p>
+        Once your shapes are created, it's time to bring them to life. In the timeline panel, expand the shape layer and use the Transform controls (position, scale, rotation, opacity) to keyframe movement. Looping comes from repeating or reversing keyframes, or using expressions like loopOut(). Even subtle animations add personality to your GIFs.
+      </p>
+    </section>
+
+    <section id="pen-tool">
+      <h2>3. How to draw with the pen tool AND animate the points</h2>
+      <img src="images/3-tanaka-mapondera-scribble-twig.gif" alt="Pen Tool Animation" class="gif" />
+      <p>
+        The pen tool offers precision and artistic freedom. Click to create straight lines or drag for curves. After drawing, enable "Path" keyframes to animate each anchor point. This technique allows fluid, hand-drawn-style animations or morphing shapes. It's great for more expressive looping effects.
+      </p>
+    </section>
+
+    <section id="blending-modes">
+      <h2>4. Experimenting with blending modes</h2>
+      <img src="images/4-tanaka-mapondera-light-8bit.gif" alt="Blending Modes" class="gif" />
+      <p>
+        Blending modes control how layers interact visually. Try "Add" or "Multiply" to create glowing or textural effects, especially with overlapping shapes. Use animated opacities and motion to make layers feel alive. Looping GIFs benefit from dynamic interactions that draw the viewer’s eye — blending modes amplify that.
+      </p>
+    </section>
+  </main>
+
+</body>
+</html>
