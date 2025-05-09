@@ -104,6 +104,21 @@
         max-width: calc(33.33% - 10px);
       }
     }
+    
+    .image-wrapper.active {
+  position: fixed !important;
+  top: 50% !important;
+  left: 50% !important;
+  width: auto !important;
+  max-width: 90vw !important;
+  height: auto !important;
+  max-height: 90vh !important;
+  transform: translate(-50%, -50%) scale(1) !important;
+  opacity: 1 !important;
+  z-index: 1000 !important;
+  animation-play-state: paused !important;
+  pointer-events: auto !important;
+}
     #overlay {
   position: fixed;
   top: 0;
