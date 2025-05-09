@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sketchbook Library</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: black;
+      font-family: sans-serif;
+      overflow-x: hidden;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      width: 100%;
+      z-index: 100;
+      background-color: black;
+      text-align: center;
+      padding: 10px 0;
+    }
+
+    header img {
+      max-width: 200px;
+      height: auto;
+      border-radius: 12px;
+    }
+
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: stretch;
+      padding: 20px;
+      gap: 10px;
+    }
+
+    .image-wrapper {
+      flex: 0 0 calc(12.5% - 10px); /* ~8 per row */
+      max-width: calc(12.5% - 10px);
+      aspect-ratio: 3 / 4;
+      border-radius: 12px;
+      overflow: hidden;
+      opacity: 0.9;
+      transition: transform 0.4s ease, opacity 0.4s ease;
+      position: relative;
+      animation-name: float;
+      animation-timing-function: ease-in-out;
+      animation-iteration-count: infinite;
+    }
+
+    .image-wrapper:nth-child(1n)  { animation-duration: 5s; animation-delay: 0s; }
+    .image-wrapper:nth-child(2n)  { animation-duration: 6s; animation-delay: 0.3s; }
+    .image-wrapper:nth-child(3n)  { animation-duration: 7s; animation-delay: 0.6s; }
+    .image-wrapper:nth-child(4n)  { animation-duration: 8s; animation-delay: 0.9s; }
+    .image-wrapper:nth-child(5n)  { animation-duration: 6.5s; animation-delay: 0.2s; }
+    .image-wrapper:nth-child(6n)  { animation-duration: 7.5s; animation-delay: 0.4s; }
+    .image-wrapper:nth-child(7n)  { animation-duration: 5.5s; animation-delay: 0.8s; }
+    .image-wrapper:nth-child(8n)  { animation-duration: 9s; animation-delay: 0.1s; }
+
+    .image-wrapper:nth-child(odd) {
+      margin-top: 20px;
+    }
+
+    .image-wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 12px;
+      display: block;
+    }
+
+    .image-wrapper:hover {
+      transform: scale(8);
+      opacity: 1;
+      z-index: 999;
+      animation-play-state: paused;
+    }
+
+    @keyframes float {
+      0%   { transform: translateY(0px) translateX(0px); }
+      25%  { transform: translateY(-1.5px) translateX(1px); }
+      50%  { transform: translateY(1.5px) translateX(-1px); }
+      75%  { transform: translateY(-1px) translateX(1px); }
+      100% { transform: translateY(0px) translateX(0px); }
+    }
+
+    @media (max-width: 768px) {
+      .image-wrapper {
+        flex: 0 0 calc(25% - 10px);
+        max-width: calc(25% - 10px);
+      }
+    }
+
+    @media (max-width: 480px) {
+      .image-wrapper {
+        flex: 0 0 calc(33.33% - 10px);
+        max-width: calc(33.33% - 10px);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <img src="images/image_Page_01.jpg" alt="Sketchbook Header">
+  </header>
+
+  <div class="gallery">
+    <!-- START OF IMAGE TILES -->
+    <div class="image-wrapper"><img src="images/image_Page_02.jpg" alt="Sketch 2"></div>
+    <div class="image-wrapper"><img src="images/image_Page_03.jpg" alt="Sketch 3"></div>
+    <div class="image-wrapper"><img src="images/image_Page_04.jpg" alt="Sketch 4"></div>
+    <div class="image-wrapper"><img src="images/image_Page_05.jpg" alt="Sketch 5"></div>
+    <div class="image-wrapper"><img src="images/image_Page_06.jpg" alt="Sketch 6"></div>
+    <div class="image-wrapper"><img src="images/image_Page_07.jpg" alt="Sketch 7"></div>
+    <div class="image-wrapper"><img src="images/image_Page_08.jpg" alt="Sketch 8"></div>
+    <div class="image-wrapper"><img src="images/image_Page_09.jpg" alt="Sketch 9"></div>
+    <div class="image-wrapper"><img src="images/image_Page_10.jpg" alt="Sketch 10"></div>
+    <div class="image-wrapper"><img src="images/image_Page_11.jpg" alt="Sketch 11"></div>
+    <div class="image-wrapper"><img src="images/image_Page_12.jpg" alt="Sketch 12"></div>
+    <div class="image-wrapper"><img src="images/image_Page_13.jpg" alt="Sketch 13"></div>
+    <div class="image-wrapper"><img src="images/image_Page_14.jpg" alt="Sketch 14"></div>
+    <div class="image-wrapper"><img src="images/image_Page_15.jpg" alt="Sketch 15"></div>
+    <div class="image-wrapper"><img src="images/image_Page_16.jpg" alt="Sketch 16"></div>
+    <div class="image-wrapper"><img src="images/image_Page_17.jpg" alt="Sketch 17"></div>
+    <div class="image-wrapper"><img src="images/image_Page_18.jpg" alt="Sketch 18"></div>
+    <div class="image-wrapper"><img src="images/image_Page_19.jpg" alt="Sketch 19"></div>
+    <div class="image-wrapper"><img src="images/image_Page_20.jpg" alt="Sketch 20"></div>
+    <div class="image-wrapper"><img src="images/image_Page_21.jpg" alt="Sketch 21"></div>
+    <div class="image-wrapper"><img src="images/image_Page_22.jpg" alt="Sketch 22"></div>
+    <div class="image-wrapper"><img src="images/image_Page_23.jpg" alt="Sketch 23"></div>
+    <div class="image-wrapper"><img src="images/image_Page_24.jpg" alt="Sketch 24"></div>
+    <div class="image-wrapper"><img src="images/image_Page_25.jpg" alt="Sketch 25"></div>
+    <div class="image-wrapper"><img src="images/image_Page_26.jpg" alt="Sketch 26"></div>
+    <div class="image-wrapper"><img src="images/image_Page_27.jpg" alt="Sketch 27"></div>
+    <div class="image-wrapper"><img src="images/image_Page_28.jpg" alt="Sketch 28"></div>
+    <div class="image-wrapper"><img src="images/image_Page_29.jpg" alt="Sketch 29"></div>
+    <div class="image-wrapper"><img src="images/image_Page_30.jpg" alt="Sketch 30"></div>
+    <div class="image-wrapper"><img src="images/image_Page_31.jpg" alt="Sketch 31"></div>
+    <div class="image-wrapper"><img src="images/image_Page_32.jpg" alt="Sketch 32"></div>
+    <div class="image-wrapper"><img src="images/image_Page_33.jpg" alt="Sketch 33"></div>
+    <div class="image-wrapper"><img src="images/image_Page_34.jpg" alt="Sketch 34"></div>
+    <div class="image-wrapper"><img src="images/image_Page_35.jpg" alt="Sketch 35"></div>
+    <div class="image-wrapper"><img src="images/image_Page_36.jpg" alt="Sketch 36"></div>
+    <div class="image-wrapper"><img src="images/image_Page_37.jpg" alt="Sketch 37"></div>
+    <div class="image-wrapper"><img src="images/image_Page_38.jpg" alt="Sketch 38"></div>
+    <div class="image-wrapper"><img src="images/image_Page_39.jpg" alt="Sketch 39"></div>
+    <div class="image-wrapper"><img src="images/image_Page_40.jpg" alt="Sketch 40"></div>
+    <div class="image-wrapper"><img src="images/image_Page_41.jpg" alt="Sketch 41"></div>
+    <div class="image-wrapper"><img src="images/image_Page_42.jpg" alt="Sketch 42"></div>
+    <div class="image-wrapper"><img src="images/image_Page_43.jpg" alt="Sketch 43"></div>
+    <div class="image-wrapper"><img src="images/image_Page_44.jpg" alt="Sketch 44"></div>
+    <div class="image-wrapper"><img src="images/image_Page_45.jpg" alt="Sketch 45"></div>
+    <div class="image-wrapper"><img src="images/image_Page_46.jpg" alt="Sketch 46"></div>
+    <div class="image-wrapper"><img src="images/image_Page_47.jpg" alt="Sketch 47"></div>
+    <div class="image-wrapper"><img src="images/image_Page_48.jpg" alt="Sketch 48"></div>
+    <div class="image-wrapper"><img src="images/image_Page_49.jpg" alt="Sketch 49"></div>
+    <div class="image-wrapper"><img src="images/image_Page_50.jpg" alt="Sketch 50"></div>
+    <div class="image-wrapper"><img src="images/image_Page_51.jpg" alt="Sketch 51"></div>
+    <div class="image-wrapper"><img src="images/image_Page_52.jpg" alt="Sketch 52"></div>
+    <div class="image-wrapper"><img src="images/image_Page_53.jpg" alt="Sketch 53"></div>
+    <div class="image-wrapper"><img src="images/image_Page_54.jpg" alt="Sketch 54"></div>
+    <div class="image-wrapper"><img src="images/image_Page_55.jpg" alt="Sketch 55"></div>
+    <div class="image-wrapper"><img src="images/image_Page_56.jpg" alt="Sketch 56"></div>
+    <div class="image-wrapper"><img src="images/image_Page_57.jpg" alt="Sketch 57"></div>
+    <div class="image-wrapper"><img src="images/image_Page_58.jpg" alt="Sketch 58"></div>
+    <div class="image-wrapper"><img src="images/image_Page_59.jpg" alt="Sketch 59"></div>
+    <div class="image-wrapper"><img src="images/image_Page_60.jpg" alt="Sketch 60"></div>
+    <div class="image-wrapper"><img src="images/image_Page_61.jpg" alt="Sketch 61"></div>
+    <div class="image-wrapper"><img src="images/image_Page_62.jpg" alt="Sketch 62"></div>
+    <div class="image-wrapper"><img src="images/image_Page_63.jpg" alt="Sketch 63"></div>
+    <div class="image-wrapper"><img src="images/image_Page_64.jpg" alt="Sketch 64"></div>
+    <div class="image-wrapper"><img src="images/image_Page_65.jpg" alt="Sketch 65"></div>
+    <div class="image-wrapper"><img src="images/image_Page_66.jpg" alt="Sketch 66"></div>
+    <div class="image-wrapper"><img src="images/image_Page_67.jpg" alt="Sketch 67"></div>
+    <div class="image-wrapper"><img src="images/image_Page_68.jpg" alt="Sketch 68"></div>
+    <div class="image-wrapper"><img src="images/image_Page_69.jpg" alt="Sketch 69"></div>
+    <div class="image-wrapper"><img src="images/image_Page_70.jpg" alt="Sketch 70"></div>
+    <div class="image-wrapper"><img src="images/image_Page_71.jpg" alt="Sketch 71"></div>
+    <div class="image-wrapper"><img src="images/image_Page_72.jpg" alt="Sketch 72"></div>
+    <div class="image-wrapper"><img src="images/image_Page_73.jpg" alt="Sketch 73"></div>
+    <div class="image-wrapper"><img src="images/image_Page_74.jpg" alt="Sketch 74"></div>
+    <div class="image-wrapper"><img src="images/image_Page_75.jpg" alt="Sketch 75"></div>
+    <div class="image-wrapper"><img src="images/image_Page_76.jpg" alt="Sketch 76"></div>
+    <div class="image-wrapper"><img src="images/image_Page_77.jpg" alt="Sketch 77"></div>
+    <div class="image-wrapper"><img src="images/image_Page_78.jpg" alt="Sketch 78"></div>
+    <div class="image-wrapper"><img src="images/image_Page_79.jpg" alt="Sketch 79"></div>
+    <div class="image-wrapper"><img src="images/image_Page_80.jpg" alt="Sketch 80"></div>
+    <div class="image-wrapper"><img src="images/image_Page_81.jpg" alt="Sketch 81"></div>
+    <div class="image-wrapper"><img src="images/image_Page_82.jpg" alt="Sketch 82"></div>
+    <div class="image-wrapper"><img src="images/image_Page_83.jpg" alt="Sketch 83"></div>
+    <div class="image-wrapper"><img src="images/image_Page_84.jpg" alt="Sketch 84"></div>
+    <div class="image-wrapper"><img src="images/image_Page_85.jpg" alt="Sketch 85"></div>
+    <div class="image-wrapper"><img src="images/image_Page_86.jpg" alt="Sketch 86"></div>
+    <div class="image-wrapper"><img src="images/image_Page_87.jpg" alt="Sketch 87"></div>
+    <div class="image-wrapper"><img src="images/image_Page_88.jpg" alt="Sketch 88"></div>
