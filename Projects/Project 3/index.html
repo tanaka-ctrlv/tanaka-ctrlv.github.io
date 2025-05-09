@@ -104,6 +104,21 @@
         max-width: calc(33.33% - 10px);
       }
     }
+    #overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(4px);
+  z-index: 900;
+  display: none;
+}
+#overlay.active {
+  display: block;
+}
+
   </style>
 </head>
 <body>
@@ -111,7 +126,7 @@
   <header>
     <img src="images/image_Page_01.jpg" alt="Sketchbook Header">
   </header>
-
+  <div id="overlay"></div>
   <div class="gallery">
     <!-- START OF IMAGE TILES -->
     <div class="image-wrapper"><img src="images/image_Page_02.jpg" alt="Sketch 2"></div>
@@ -201,3 +216,42 @@
     <div class="image-wrapper"><img src="images/image_Page_86.jpg" alt="Sketch 86"></div>
     <div class="image-wrapper"><img src="images/image_Page_87.jpg" alt="Sketch 87"></div>
     <div class="image-wrapper"><img src="images/image_Page_88.jpg" alt="Sketch 88"></div>
+    <script>
+        const wrappers = document.querySelectorAll('.image-wrapper');
+        const overlay = document.getElementById('overlay');
+        let activeWrapper = null;
+      
+        wrappers.forEach(wrapper => {
+          wrapper.addEventListener('click', (e) => {
+            e.stopPropagation(); // prevent body click from firing
+      
+            if (activeWrapper && activeWrapper !== wrapper) {
+              activeWrapper.classList.remove('active');
+            }
+      
+            const isActive = wrapper.classList.toggle('active');
+            activeWrapper = isActive ? wrapper : null;
+      
+            overlay.classList.toggle('active', isActive);
+          });
+        });
+      
+        // Close when clicking the overlay
+        overlay.addEventListener('click', () => {
+          if (activeWrapper) {
+            activeWrapper.classList.remove('active');
+            overlay.classList.remove('active');
+            activeWrapper = null;
+          }
+        });
+      
+        // Close with Escape key
+        window.addEventListener('keydown', e => {
+          if (e.key === 'Escape' && activeWrapper) {
+            activeWrapper.classList.remove('active');
+            overlay.classList.remove('active');
+            activeWrapper = null;
+          }
+        });
+      </script>
+      
