@@ -32,6 +32,19 @@
       border-radius: 12px;
     }
 
+    .subheading {
+  color: white;
+  font-size: 0.875rem;
+  font-weight: 300;
+  margin-top: 8px;
+  line-height: 1.4;
+  text-align: center;
+  opacity: 0.6;
+  letter-spacing: 0.05em;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+
     .gallery {
       display: flex;
       flex-wrap: wrap;
@@ -75,6 +88,14 @@
       border-radius: 12px;
       display: block;
     }
+    
+    .image-wrapper.active img {
+  object-fit: contain;
+  width: 100%;
+  height: auto;
+  max-height: 90vh;
+  border-radius: 0;
+}
 
     .image-wrapper:hover {
       transform: scale(8);
@@ -104,7 +125,7 @@
         max-width: calc(33.33% - 10px);
       }
     }
-    
+
     .image-wrapper.active {
   position: fixed !important;
   top: 50% !important;
@@ -140,6 +161,8 @@
 
   <header>
     <img src="images/image_Page_01.jpg" alt="Sketchbook Header">
+    <p class="subheading">type design sketchbooks<br>march 10, 2025</p>
+
   </header>
   <div id="overlay"></div>
   <div class="gallery">
